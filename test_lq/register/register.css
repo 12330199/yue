@@ -74,3 +74,92 @@ body {
 	z-index: 7;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS declarations go here */
+body {
+	background-image: url(http://ww4.sinaimg.cn/mw690/00678T8Kgw1et3n9l49loj31hc0u0ag0.jpg);
+	background-repeat: no-repeat;
+        /*background-repeat: repeat-y;
+	background-size:cover;*/
+}
+
+
+#apDiv110 {
+	position: absolute;
+	left: 119px;
+	top: 114px;
+	width: 170px;
+	height: 21px;
+	z-index: 1;
+}
+#apDiv112 {
+	position: absolute;
+	left: 120px;
+	top: 219px;
+	width: 170px;
+	height: 20px;
+	z-index: 2;
+}
+#apDiv113 {
+	position: absolute;
+	left: 368px;
+	top: -12px;
+	width: 42px;
+	height: 39px;
+	z-index: 3;
+}
+#apDiv114 {
+	position: absolute;
+	left: 262px;
+	top: 342px;
+	width: 100px;
+	height: 52px;
+	z-index: 4;
+}
+
+#apDiv115 {
+	position: absolute;
+	left: 40%;
+	top: 15%;
+	width: 35%;
+	height: 73%;
+	z-index: 5;
+}
+#apDiv116 {
+	position: absolute;
+	left: 121px;
+	top: 284px;
+	width: 170px;
+	height: 20px;
+	z-index: 2;
+}
+
+#apDiv200 {
+	position: absolute;
+	left: 275px;
+	top: 166px;
+	width: 67px;
+	height: 20px;
+	z-index: 6;
+}
+#apDiv300 {
+	position: absolute;
+	left: 120px;
+	top: 166px;
+	width: 166px;
+	height: 22px;
+	z-index: 7;
+}
+
