@@ -1,0 +1,42 @@
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>约</title>
+<link href="login.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<template name="login" id="login">
+<div id="apDiv1">
+<img src="http://ww4.sinaimg.cn/mw690/00678T8Kgw1et3n9jwe5oj30at0bnmx9.jpg" width="389" height="419" />
+<div id="apDiv2">
+  <form id="form1" name="form1" method="post" action="">
+    <label for="email"></label>
+    <input type="text" name="email" id="email" />
+  </form>
+</div>
+<div id="apDiv3">
+  <form id="form2" name="form2" method="post" action="">
+    <label for="password"></label>
+    <input type="password" name="password" id="password" />
+  </form>
+</div>
+{{> click}}
+
+  
+</div>
+
+</template>
+
+<template name="click">
+<div id="apDiv5">
+<a id="yue"  ><img src="http://ww4.sinaimg.cn/mw690/00678T8Kgw1et3n9k9qpfj302s01ea9x.jpg" width="102" height="57" /></a>
+</div>
+<div id="apDiv4"> 
+<a id="register" ><img src="http://ww1.sinaimg.cn/mw690/00678T8Kgw1et3n9lnn6ij302k00vq2s.jpg" width="107" height="31" /></a>
+</div>
+</template>
+
+
+
+
