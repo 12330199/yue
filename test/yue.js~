@@ -1,0 +1,23 @@
+if(Meteor.isClient) {
+Template.page.events({
+    'click #mess': function () {
+      //alert("aa");
+       var content = document.getElementById("content").value; 
+      //alert(content);  
+       
+         //send message on the home page
+       $('#apDiv333').append('<div><p>'+mail+'</p></div>');
+    }
+  });
+
+
+  
+  //$('#one').append('<div><p>'+"love life"+'</p></div>');   
+}
+
+if(Meteor.isServer) {
+
+
+}
+
+
