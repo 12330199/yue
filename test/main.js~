@@ -1,0 +1,34 @@
+Session.setDefault("currentUrl", {login: "active", page: "", reg: ""});
+
+
+var urlRouter = Backbone.Router.extend({
+  routes: {
+    "": "login",
+    "page": "page",
+    "reg": "reg"
+  },
+  login: function () {
+    Session.set("currentUrl", {login: "active", page: "", reg: ""});
+  },
+  page: function () {
+   
+    Session.set("currentUrl", {login: "", page: "active", reg: ""});
+  },
+  reg: function () {
+    
+    Session.set("currentUrl", {login: "", page: "", reg: "active"});
+  }
+  
+});
+
+Router = new urlRouter;
+
+Meteor.startup(function () {
+  Backbone.history.start({pushState: true});
+});
+
+
+Template.container.currentUrl = function () {
+  return Session.get("currentUrl");
+};
+

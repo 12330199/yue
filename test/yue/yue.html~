@@ -1,0 +1,38 @@
+
+
+<template name="page" id="page">
+<div id="apDiv111">
+  <form id="form1" name="form1" method="post" action="">
+    <label for="content"></label>
+    <textarea name="content" id="content" cols="70" rows="5"></textarea>
+  </form>
+  <div id="apDiv222"><a id="mess" onclick="send()"><img src="http://ww1.sinaimg.cn/mw690/00678T8Kgw1et3n9jk40vj302f0143yd.jpg" width="87" height="40" /></a></div>
+
+</div>
+<div id="apDiv333">
+ 
+  
+     {{#each client}}
+     <div class="gogo"><a style="float:right;" href="sendMail?mail={{Mail}}~{{data.from}}"><img  src="http://ww3.sinaimg.cn/mw690/00678T8Kgw1et3n9g82ctj302g013q2s.jpg" width="88" height="39" /></a></div>
+     <p>{{Mail}}</p>
+     <p>{{Content}}</p>
+     <p>{{Time}}</p>
+     <div style="padding-top:5px;padding-bottom:5px;">
+     <hr width=98% size=1 color=#707070 style="border:2 double black"> 
+     </div>
+     {{/each}}
+  
+</div>
+<!--
+<div id="apDiv666"><img id="picture" src={{people.picture}} width="95" height="139" />
+  <div id="apDiv777">
+    <form id="yourname " name="form3" method="post" action="">
+      <strong>{{people.yourname}}</strong>
+    </form>
+  </div>
+  <div id="apDiv888"><p id="personal">{{people.personal}}</p></div>
+<div id="xiugaibt"><a href="setting"><img src="http://ww3.sinaimg.cn/bmiddle/00678T8Kgw1et8gq3fx16j302j01cq2p.jpg" width="87" height="40"/></a></div>
+
+</div>-->
+<div id="apDiv999"><strong> <em>我的约信</em></strong></div>
+</template>
