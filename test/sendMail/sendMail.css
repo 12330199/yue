@@ -1,0 +1,58 @@
+body {
+	background-image: url(http://ww4.sinaimg.cn/mw690/00678T8Kgw1et3n9l49loj31hc0u0ag0.jpg);
+	background-repeat: no-repeat;
+       /* background-repeat: repeat-y;
+	background-size: cover*/
+
+}
+#apDiv121 {
+	position: absolute;
+	left: 30%;
+	top: 20%;
+	width: 355px;
+	height: 384px;
+	z-index: 1;
+}
+#apDiv122 {
+	position: absolute;
+	left: 111px;
+	top: 90px;
+	width: 216px;
+	height: 24px;
+	z-index: 2;
+}
+
+
+#apDiv123 {
+	position: absolute;
+	left: 111px;
+	top: 130px;
+	width: 220px;
+	height: 25px;
+	z-index: 3;
+}
+
+#apDiv124 {
+	position: absolute;
+	left: 28px;
+	top: 212px;
+	width: 280px;
+	height: 93px;
+	z-index: 4;
+}
+#apDiv125 {
+	position: absolute;
+	left: 30px;
+	top: 327px;
+	width: 78px;
+	height: 41px;
+	z-index: 5;
+}
+#apDiv126 {
+	position: absolute;
+	left: 239px;
+	top: 328px;
+	width: 82px;
+	height: 40px;
+	z-index: 6;
+}

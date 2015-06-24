@@ -1,0 +1,129 @@
+var mail="";
+
+//Account-ui
+if (Meteor.isClient) {
+  Session.setDefault("data",{to:"1111111111",from:"1234567890"});//
+  Template.page.data = function () {
+     
+     return Session.get("data");
+   };
+   Template.sendMail.data = function () {
+     
+     return Session.get("data");
+   };
+  
+  Template.click.events({
+    
+    'click #yue': function () {
+         mail=document.getElementById("Email").value;
+       var pass=document.getElementById("password").value;
+       if(mail=="") {
+        
+        alert("邮箱不能为空");
+      }
+      else if (/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(mail) == false) {
+         alert('邮箱格式不正确，请重新输入');
+         window.location.href="http://login.meteor.com";
+       }
+      else {
+        if(User.find({Mail:mail,Pass:pass}).count()==1) {
+          Session.set('data',{from:mail});
+       
+          Session.set("currentUrl", {login: "", page: "active", reg: ""});
+         
+        }
+        else {
+          alert('您的用户名或密码不正确，请重新输入');
+          Session.set("currentUrl", {login: "active", page: "", reg: "",sendMail:"",setting:""});
+        
+        }
+      }     
+
+    }
+    
+  });
+
+
+  Template.click.events({
+    'click #register': function () {
+
+    Session.set("currentUrl", {login: "", page: "", reg: "active",sendMail:"",setting:""});
+   
+        
+    }
+  });
+
+
+  Template.page.events({
+    
+    'click #mess': function () {
+       var content = document.getElementById("content").value;
+       document.getElementById("content").value="";
+      
+       var date=moment().format('MMMM Do YYYY, h:mm:ss a');
+       var id=post.find().count()+1;
+       if(mail=="") {
+         alert("请先登录！");
+         Session.set("currentUrl", {login: "active", page: "", reg: "",sendMail:"",setting:""});
+         
+        
+       }
+       else if(content=="")
+       {
+         alert("消息不能为空！");
+       }
+       else
+       {
+          post.insert({Mail:mail,Content:content,Time:date,ID:id});
+       }
+  
+    }
+});    
+  
+
+  Template.page.helpers({
+	'client': function() {
+		return post.find({},{sort:{ID:-1}});
+	}
+  });
+
+Session.setDefault("people", {picture: "http://ww3.sinaimg.cn/mw690/00678T8Kgw1et3n9j26imj30qe12t48h.jpg", yourname: "Angelababy", personal:"o(&gt;﹏&lt;)这里写个性签名"});
+
+ 
+   
+   Template.sendMail.events({
+    
+    
+    'click #yes':function(){
+       var url=window.location.href;
+       var xx=url.indexOf('=');
+       var yy=url.indexOf('~')
+
+       var to1=url.substring(xx+1,yy);
+       var from1=url.substring(yy+1,url.length);
+       mail=from1;
+       var cont=document.getElementById("cont").value;
+       Session.set('data',{to:to1,from:from1});
+       Meteor.call('sendEmail',
+            to1,
+            from1,
+            'Hello from Meteor!',
+            cont);
+       
+       Session.set("currentUrl", {login: "", page: "active", reg: "",sendMail:"",setting:""});
+      
+    }
+  });
+
+}
+
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+
+        //get value from browser  
+       
+  process.env.MAIL_URL = 'smtp://postmaster@sandboxbd0b40909f0e4e149dbdf704b4d0a886.mailgun.org:62f9e10e8fba10ff401cefa94548fb29@smtp.mailgun.org';
+});
+   
+
+}
