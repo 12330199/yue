@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>110</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>YueMessage
+--
+content
+available
+sender
+--
+write(content)
+setAval(available)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>110</y>
+      <w>210</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>User
+--
+name 
+mail_address
+gender
+individual_signature 
+password
+--
+getName(name)
+setName(name)...
+send(YueMessage)
+keep(YueMessage)
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>150</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+Post &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>190</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+Choose &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>360</y>
+      <w>210</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Mail
+--
+content
+sender
+receiver
+--
+getYuecontent(yue:YueMessage)
+getPoster(user:User)
+getReceiver(user:User)
+sent(receiver:User)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>280</y>
+      <w>120</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+Receive &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;100.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>230</y>
+      <w>160</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=1
+Get Content From &gt;</panel_attributes>
+    <additional_attributes>10.0;170.0;140.0;170.0;140.0;10.0</additional_attributes>
+  </element>
+</diagram>
