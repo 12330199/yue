@@ -1,4 +1,5 @@
 var mail="";
+<<<<<<< HEAD
 
 //Account-ui
 if (Meteor.isClient) {
@@ -11,11 +12,22 @@ if (Meteor.isClient) {
      
      return Session.get("data");
    };
+=======
+//Account-ui
+if (Meteor.isClient) {
+  Session.setDefault("data",{to:"1234567890",from:"1234567890"});//
+  
+  var url=window.location.href;
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
   
   Template.click.events({
     
     'click #yue': function () {
+<<<<<<< HEAD
          mail=document.getElementById("Email").value;
+=======
+       mail=document.getElementById("Email").value;
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
        var pass=document.getElementById("password").value;
        if(mail=="") {
         
@@ -28,14 +40,25 @@ if (Meteor.isClient) {
       else {
         if(User.find({Mail:mail,Pass:pass}).count()==1) {
           Session.set('data',{from:mail});
+<<<<<<< HEAD
        
           Session.set("currentUrl", {login: "", page: "active", reg: ""});
          
+=======
+         
+
+          Session.set("currentUrl", {login: "", page: "active", reg: ""});
+          Router.redirect("/page");
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
         }
         else {
           alert('您的用户名或密码不正确，请重新输入');
           Session.set("currentUrl", {login: "active", page: "", reg: "",sendMail:"",setting:""});
+<<<<<<< HEAD
         
+=======
+         Router.redirect("/");
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
         }
       }     
 
@@ -48,7 +71,11 @@ if (Meteor.isClient) {
     'click #register': function () {
 
     Session.set("currentUrl", {login: "", page: "", reg: "active",sendMail:"",setting:""});
+<<<<<<< HEAD
    
+=======
+    Router.redirect("/reg");
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
         
     }
   });
@@ -61,11 +88,19 @@ if (Meteor.isClient) {
        document.getElementById("content").value="";
       
        var date=moment().format('MMMM Do YYYY, h:mm:ss a');
+<<<<<<< HEAD
+=======
+       
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
        var id=post.find().count()+1;
        if(mail=="") {
          alert("请先登录！");
          Session.set("currentUrl", {login: "active", page: "", reg: "",sendMail:"",setting:""});
+<<<<<<< HEAD
          
+=======
+         Router.redirect("/"); 
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
         
        }
        else if(content=="")
@@ -95,13 +130,20 @@ Session.setDefault("people", {picture: "http://ww3.sinaimg.cn/mw690/00678T8Kgw1e
     
     
     'click #yes':function(){
+<<<<<<< HEAD
        var url=window.location.href;
+=======
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
        var xx=url.indexOf('=');
        var yy=url.indexOf('~')
 
        var to1=url.substring(xx+1,yy);
        var from1=url.substring(yy+1,url.length);
+<<<<<<< HEAD
        mail=from1;
+=======
+       
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
        var cont=document.getElementById("cont").value;
        Session.set('data',{to:to1,from:from1});
        Meteor.call('sendEmail',
@@ -110,8 +152,13 @@ Session.setDefault("people", {picture: "http://ww3.sinaimg.cn/mw690/00678T8Kgw1e
             'Hello from Meteor!',
             cont);
        
+<<<<<<< HEAD
        Session.set("currentUrl", {login: "", page: "active", reg: "",sendMail:"",setting:""});
       
+=======
+       Session.set("currentUrl", {login: "active", page: "", reg: "",sendMail:"",setting:""});
+       Router.redirect("/"); 
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
     }
   });
 
@@ -124,6 +171,10 @@ if (Meteor.isServer) {
        
   process.env.MAIL_URL = 'smtp://postmaster@sandboxbd0b40909f0e4e149dbdf704b4d0a886.mailgun.org:62f9e10e8fba10ff401cefa94548fb29@smtp.mailgun.org';
 });
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> a49ff0166819d6f41684ad84f43175ffe74b1999
 
 }

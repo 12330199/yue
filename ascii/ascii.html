@@ -1,0 +1,64 @@
+
+<head>
+	<title>ASCIImation</title>
+	<meta http-equiv="content-type" content="text/html">
+	<link href="ascii.css" type="text/css" rel="stylesheet" />
+	
+</head>
+
+<body>
+
+{{> hello}}
+</body>
+
+<template name="hello">
+<script type="text/javascript" src="ascii.js"></script>
+<script type="text/javascript" src="animations.js"></script>
+<h1>
+CSE 190 M ASCII Animation Viewer 
+</h1>
+<div id="display">
+<textarea id="displayarea" ></textarea>
+</div>
+
+<div id="box1">
+<p><span style="position:relative;bottom:20px;">Play Controls:</span></p>
+<input type="button" value="Start" onClick="timeBegin()" >
+<input type="button" value="Stop" onClick="timeEnd()" >
+</div>
+<div id="box2">
+<p><span style="position:relative;bottom:20px;">Animation:</span></p>
+<select name="select" id="sele" onClick="change()">
+	 <option value="Blank">Blank</option>
+	 <option value="Exercise">Exercise</option>
+	 <option value="Juggler">Juggler</option>
+	 <option value="Bike">Bike</option>
+	 <option value="Dive">Dive</option>
+	
+
+</select>
+</div>
+<div id="box3">
+<span style="position:relative;bottom:20px;">
+<p>Size:</p>
+<input type="radio" name="choose" value="Small"  onClick="changeS()"/>Small
+<input type="radio" name="choose" value="Medium" onClick="changeM()"/>Medium
+<input type="radio" name="choose" value="Large" onClick="changeL()"/>Large</span>
+</div>
+<div id="box4"><span style="position:relative;bottom:20px;">
+<p>Speed:</p>
+<input type="checkbox" name="choose" value="Turbo" onClick="changeSpeed()"/>Turbo</span>
+
+</div>
+<div id="w3c">
+<div>
+			<a href="http://validator.w3.org/check/referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/5/w3c-xhtml.png" alt="Valid XHTML 1.1" /></a>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/5/w3c-css.png" alt="Valid CSS" /></a>
+			<a href="https://webster.cs.washington.edu/jslint/?referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/5/jslint.png" alt="JavaScript Lint" /></a>
+		</div>
+
+</div>
+</template>
+
+
+
