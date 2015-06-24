@@ -1,0 +1,19 @@
+//Accounts.createUser({Mail: mail, Pass: pass});
+
+/*
+                  Accounts.createUser({username: mail, password: pass}, function (err) {
+      if (err) {
+       // Session.set("info", {success: "", error: err.reason});
+        alert('error');
+      } else {
+        //Router.redirect("/");//跳转到主页
+        //Session.set("info", {success: "注册成功", error: ""});
+        alert('success');
+      }
+    });          alert(Meteor.userId());*/
+
+
+
+
+
+

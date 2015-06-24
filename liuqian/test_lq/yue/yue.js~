@@ -1,0 +1,20 @@
+if(Meteor.isClient) {
+
+Template.page.events({
+    
+    'click #gogo': function () {
+       
+       
+    }
+  }); 
+
+  
+  //$('#one').append('<div><p>'+"love life"+'</p></div>');   
+}
+
+if(Meteor.isServer) {
+
+
+}
+
+
