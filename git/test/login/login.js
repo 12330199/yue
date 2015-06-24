@@ -12,12 +12,6 @@ if (Meteor.isClient) {
      return Session.get("data");
    };
 
-//Account-ui
-if (Meteor.isClient) {
-  Session.setDefault("data",{to:"1234567890",from:"1234567890"});//
-  
-  var url=window.location.href;
-  
   Template.click.events({
     
     'click #yue': function () {
@@ -38,14 +32,8 @@ if (Meteor.isClient) {
         if(User.find({Mail:mail,Pass:pass}).count()==1) {
           Session.set('data',{from:mail});
 
-       
           Session.set("currentUrl", {login: "", page: "active", reg: ""});
-         
-
-         
-
-          Session.set("currentUrl", {login: "", page: "active", reg: ""});
-          Router.redirect("/page");
+          //Router.redirect("/page");
 
         }
         else {
@@ -54,7 +42,7 @@ if (Meteor.isClient) {
 
         
 
-         Router.redirect("/");
+         //Router.redirect("/");
         }
       }     
 
@@ -134,15 +122,14 @@ Session.setDefault("people", {picture: "http://ww3.sinaimg.cn/mw690/00678T8Kgw1e
        Meteor.call('sendEmail',
             to1,
             from1,
-            'Hello from Meteor!',
+            'Come from your friends on the Yue.',
             cont);
        
 
        Session.set("currentUrl", {login: "", page: "active", reg: "",sendMail:"",setting:""});
       
 
-       Session.set("currentUrl", {login: "active", page: "", reg: "",sendMail:"",setting:""});
-       Router.redirect("/"); 
+      // Router.redirect("/"); 
     }
   });
 

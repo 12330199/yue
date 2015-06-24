@@ -24,7 +24,7 @@ if (Meteor.isClient) {
         Meteor.call('sendEmail',
             mail,
             'yue_admin@163.com',
-            'Hello from Yue!',
+            'Hello from Meteor!',
             sign1);
         alert("验证码已发至您的邮箱，请稍作等待。");
       } 
@@ -85,7 +85,7 @@ if (Meteor.isClient) {
                    Meteor.call('sendEmail',
                      mail,
                     'yue_admin@163.com',
-                    'Hello from Yue!',
+                    'Hello from Meteor!',
                     'Congratulations, the registration is successful!');
                   
 
